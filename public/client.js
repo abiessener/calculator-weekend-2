@@ -8,15 +8,28 @@ var calcObj = {
 };
 
 function sendData() {
-    //POST the numbers + operation obj and GET a number back
+    //POST the numbers + operation obj
     $.ajax('/operate', {
         method: 'POST',
         data: calcObj,
         success: function (response) {
             console.log('POST successful, response:', response);
-
         }
     });
+    getData();
+}
+
+function getData(){
+    $.ajax('/operate', {
+        method: 'GET',
+        success: function(response){
+            updateDisplay(response);
+        }
+    });
+    currentValue = '';
+    calcObj.inputOne = '';
+    calcObj.inputTwo = '';
+    calcObj.operation = '';
 }
 
 function updateDisplay(numbers) {
