@@ -23,13 +23,20 @@ function getData(){
     $.ajax('/operate', {
         method: 'GET',
         success: function(response){
-            updateDisplay(response);
+            updateDelay(response);
         }
     });
     currentValue = '';
     calcObj.inputOne = '';
     calcObj.inputTwo = '';
     calcObj.operation = '';
+}
+
+function updateDelay(numbers){
+    updateDisplay('cOmpuTInG...');
+    setTimeout(function(){
+        updateDisplay(numbers);
+    }, 3000);
 }
 
 function updateDisplay(numbers) {
