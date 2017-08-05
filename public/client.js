@@ -1,4 +1,4 @@
-var currentValue = '0';
+var currentValue = '';
 
 // stores the current calculation - two inputs and an operation - as strings
 var calcObj = {
@@ -31,9 +31,9 @@ function pressNum(input) {
     }
 }
 
-function pressDot(){
+function pressDot() {
     console.log('pressDot');
-    if (currentValue.indexOf('.') < 0){
+    if (currentValue.indexOf('.') < 0) {
         currentValue += '.';
     }
 }
@@ -41,15 +41,25 @@ function pressDot(){
 // create an object with the input and the operation 
 function pressOp(input) {
     console.log('pressOp', input);
-    calcObj.inputOne = currentValue;
-    calcObj.operation = input;
+    if (calcObj.operation.length === 0) {
+        calcObj.inputOne = currentValue;
+        calcObj.operation = input;
+        currentValue = '';
+        updateDisplay('');
+    }
 }
 
 // set inputTwo to the current value and send the whole thing to the server
-function pressEquals(){
-    console.log('pressEquals');
+function pressEquals() {
     calcObj.inputTwo = currentValue;
+    console.log('pressEquals');
+    console.log(calcObj);
     sendData();
+}
+
+function pressClear() {
+    currentValue = '';
+    updateDisplay(currentValue);
 }
 
 $(document).ready(function () {
@@ -85,11 +95,19 @@ $(document).ready(function () {
     });
     $('#dotButton').on('click', pressDot);
 
-    // $('#clearButton').on('click', pressClear);
-    // $('#divideButton').on('click', pressDivide);
-    // $('#multiplyButton').on('click', pressMultiply);
-    // $('#subtractButton').on('click', pressSubtract);
-    // $('#addButton').on('click', pressAdd);
-    // $('#equalsButton').on('click', pressEquals);
+    $('#clearButton').on('click', pressClear);
+    $('#divideButton').on('click', function () {
+        pressOp('/')
+    });
+    $('#multiplyButton').on('click', function () {
+        pressOp('*')
+    });
+    $('#subtractButton').on('click', function () {
+        pressOp('-')
+    });
+    $('#addButton').on('click', function () {
+        pressOp('+')
+    });
+    $('#equalsButton').on('click', pressEquals);
 
 });
