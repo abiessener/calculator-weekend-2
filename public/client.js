@@ -12,9 +12,9 @@ function sendData() {
     $.ajax('/operate', {
         method: 'POST',
         data: calcObj,
-        success: function(response){
+        success: function (response) {
             console.log('POST successful, response:', response);
-            
+
         }
     });
 }
@@ -59,7 +59,9 @@ function pressOp(input) {
 
 // set inputTwo to the current value and send the whole thing to the server
 function pressEquals() {
-    calcObj.inputTwo = currentValue;
+    if (calcObj.inputOne.length > 0 && calcObj.inputTwo.length === 0 && calcObj.operation.length === 1) {
+        calcObj.inputTwo = currentValue;
+    }
     console.log('pressEquals');
     console.log(calcObj);
     sendData();
