@@ -9,6 +9,14 @@ var calcObj = {
 
 function sendData() {
     //POST the numbers + operation obj and GET a number back
+    $.ajax('/operate', {
+        method: 'POST',
+        data: calcObj,
+        success: function(response){
+            console.log('POST successful, response:', response);
+            
+        }
+    });
 }
 
 function updateDisplay(numbers) {
