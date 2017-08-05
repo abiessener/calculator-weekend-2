@@ -2,12 +2,18 @@ body {
     background-color: mintcream;
 }
 
+#headlineDiv {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
 #calcDiv {
     background-color: lightseagreen;
     border: 2px double black;
     border-radius: 10px;
     width: 230px;
-    height: 270px;
+    height: 320px;
     margin: 10 auto;
 }
 
@@ -26,8 +32,8 @@ body {
 #buttonsDiv {
     display: grid;
     padding: 5px;
-    grid-template-columns: 25% 25% 25% 25% ;
-    grid-template-rows: 25% 25% 25% 25% ;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
 }
 
 button {
@@ -132,5 +138,15 @@ button {
 #threeButton {
     grid-column: 3 / span 1;
     grid-row: 4 / span 1;
+}
+
+#dotButton {
+    grid-column: 3 / span 1;
+    grid-row: 5 / span 1;
+}
+
+#zeroButton {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
 }
 
