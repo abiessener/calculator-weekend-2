@@ -1,14 +1,14 @@
-var currentValue = '';
+var currentValue = ''; // tracker for the user's input
 
-// stores the current calculation - two inputs and an operation - as strings
+// calcObj stores the current calculation - two inputs and an operation - as strings
 var calcObj = {
     inputOne: '',
     inputTwo: '',
     operation: ''
 };
 
+// POST the calculation object to the server, then fire off the GET command
 function sendData() {
-    //POST the numbers + operation obj
     $.ajax('/operate', {
         method: 'POST',
         data: calcObj,
@@ -19,10 +19,11 @@ function sendData() {
     getData();
 }
 
-function getData(){
+// get the 'result' string from the server and clear client-side vars
+function getData() {
     $.ajax('/operate', {
         method: 'GET',
-        success: function(response){
+        success: function (response) {
             updateDelay(response);
         }
     });
@@ -32,17 +33,16 @@ function getData(){
     calcObj.operation = '';
 }
 
-function updateDelay(numbers){
+// three-second delay before updating the display with thepassed string
+function updateDelay(numbers) {
     updateDisplay('cOmpuTInG...');
-    setTimeout(function(){
+    setTimeout(function () {
         updateDisplay(numbers);
     }, 3000);
 }
 
+// update the display with the passed string
 function updateDisplay(numbers) {
-    //clear #resultsWindow and display the numbers there (maybe) with commas
-    console.log('updateDisplay');
-
     while (numbers[0] === '0') {
         numbers = numbers.substr(1);
     } // strip leading zeroes from the display value
@@ -59,6 +59,7 @@ function pressNum(input) {
     }
 }
 
+// only add a dot to the input string if there isn't one already
 function pressDot() {
     console.log('pressDot');
     if (currentValue.indexOf('.') < 0) {
@@ -77,7 +78,7 @@ function pressOp(input) {
     }
 }
 
-// set inputTwo to the current value and send the whole thing to the server
+// set inputTwo to the current value and then send the calculation object to the server
 function pressEquals() {
     if (calcObj.inputOne.length > 0 && calcObj.inputTwo.length === 0 && calcObj.operation.length === 1) {
         calcObj.inputTwo = currentValue;
@@ -87,11 +88,13 @@ function pressEquals() {
     sendData();
 }
 
+// clear the display and the user input tracker
 function pressClear() {
     currentValue = '';
     updateDisplay(currentValue);
 }
 
+// our doc ready is really just click handlers
 $(document).ready(function () {
     $('#zeroButton').on('click', function () {
         pressNum('0')
@@ -141,3 +144,14 @@ $(document).ready(function () {
     $('#equalsButton').on('click', pressEquals);
 
 });
+
+
+
+/*--------------------TODO--------------------
+
+trim result?
+input fields
+silly buttons with nic & templin faces
+jquery animations
+
+--------------------------------------------*/
