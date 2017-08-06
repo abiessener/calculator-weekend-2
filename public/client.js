@@ -47,7 +47,12 @@ function updateDisplay(numbers) {
         numbers = numbers.substr(1);
     } // strip leading zeroes from the display value
 
-    $('#resultWindow').html(numbers);
+    if (numbers.length > 14) {
+        $('#resultWindow').html('#ERR-LENGTH');
+    } else {
+        $('#resultWindow').html(numbers);
+    }
+
 }
 
 //add input (which is a string) to currentValue and update the display
