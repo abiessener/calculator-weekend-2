@@ -123,6 +123,11 @@ function growNic(factor){
     }, timeoutRand);
 }
 
+function pressOperate () {
+    calcObj.inputOne = $('#baseInputOne').val();
+    calcObj.inputTwo = $('#baseInputTwo').val();
+}
+
 // our doc ready is really just click handlers
 $(document).ready(function () {
     $('#zeroButton').on('click', function () {
@@ -175,15 +180,14 @@ $(document).ready(function () {
     $('#templinButton').on('click', pressTemplin);
     $('#nicButton').on('click', pressNic);
 
+    $('#baseOperate').on('click', pressOperate);
 });
 
 
 
 /*--------------------TODO--------------------
 
-trim result?
 input fields
-silly buttons with nic & templin faces
 jquery animations
 
 --------------------------------------------*/
