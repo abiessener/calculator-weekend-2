@@ -17,6 +17,22 @@ body {
     margin: 10 auto;
 }
 
+#baseDiv {
+    background-color: mediumturquoise;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 60px;
+    margin: auto;
+    padding: 10px;
+    width: 569px;
+    text-align: center;
+}
+
+#baseOperate {
+    margin: 0px auto;
+    width: 100px;
+}
+
 #resultWindow {
     background-color: white;
     margin: 5 auto;
