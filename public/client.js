@@ -99,6 +99,14 @@ function pressClear() {
     updateDisplay(currentValue);
 }
 
+function pressTemplin() {
+    console.log('pressTemplin');
+}
+
+function pressNic() {
+    console.log('pressNic');
+}
+
 // our doc ready is really just click handlers
 $(document).ready(function () {
     $('#zeroButton').on('click', function () {
@@ -147,6 +155,9 @@ $(document).ready(function () {
         pressOp('+')
     });
     $('#equalsButton').on('click', pressEquals);
+
+    $('#templinButton').on('click', pressTemplin);
+    $('#nicButton').on('click', pressNic);
 
 });
 

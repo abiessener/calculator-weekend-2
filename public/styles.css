@@ -57,6 +57,13 @@ button {
     background-color: lightslategray;
 }
 
+.dudeButtons {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black; 
+    margin: 5px;
+}
+
 #equalsButton {
     height: 90px;
     width: 40px;
@@ -140,9 +147,10 @@ button {
     grid-row: 4 / span 1;
 }
 
-#dotButton {
-    grid-column: 3 / span 1;
+#templinButton {
+    grid-column: 1 / span 1;
     grid-row: 5 / span 1;
+    padding: 0;
 }
 
 #zeroButton {
@@ -150,3 +158,13 @@ button {
     grid-row: 5 / span 1;
 }
 
+#dotButton {
+    grid-column: 3 / span 1;
+    grid-row: 5 / span 1;
+}
+
+#nicButton {
+    grid-column: 4 / span 1;
+    grid-row: 5 / span 1;
+    padding: 0;
+}
