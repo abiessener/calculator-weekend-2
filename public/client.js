@@ -109,6 +109,18 @@ function pressTemplin() {
 
 function pressNic() {
     console.log('pressNic');
+    var growthFactor = Math.floor(Math.random() * (1 + 3 - 1) + 1);
+    growNic(growthFactor);
+}
+
+function growNic(factor){
+    $('#nicButton').children().height($('#nicButton').children().height() + factor);
+    $('#nicButton').children().width($('#nicButton').children().width() + factor);
+    timeoutRand = Math.floor(Math.random() * (1 + 3000 - 1000) + 1000);
+    growthRand = Math.floor(Math.random() * (1 + 3 - 1) + 1);
+    setTimeout(function() {
+        growNic(growthRand);
+    }, timeoutRand);
 }
 
 // our doc ready is really just click handlers

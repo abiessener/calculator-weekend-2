@@ -41,6 +41,7 @@ button {
     font-size: 18px;
     text-align: center;
 }
+
 .opsButtons {
     height: 40px;
     width: 40px;
@@ -52,7 +53,7 @@ button {
 .numButtons {
     height: 40px;
     width: 40px;
-    border: 1px solid black; 
+    border: 1px solid black;
     margin: 5px;
     background-color: lightslategray;
 }
@@ -60,14 +61,14 @@ button {
 .dudeButtons {
     height: 40px;
     width: 40px;
-    border: 1px solid black; 
+    border: 1px solid black;
     margin: 5px;
 }
 
 #equalsButton {
     height: 90px;
     width: 40px;
-    border: 1px solid black; 
+    border: 1px solid black;
     margin: 5px;
 }
 
@@ -167,4 +168,13 @@ button {
     grid-column: 4 / span 1;
     grid-row: 5 / span 1;
     padding: 0;
+}
+
+#nicFace{
+    position: absolute;
+    top: 190;
+    bottom: 0;
+    left: 160;
+    right: 0;
+    margin: auto;
 }
