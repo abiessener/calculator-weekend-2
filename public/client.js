@@ -105,7 +105,7 @@ function pressClear() {
 
 function pressTemplin() {
     console.log('pressTemplin');
-    updateDisplay('5318008');
+    updateDisplay('>_<');
     calcObj.inputOne = '';
     calcObj.inputTwo = '';
     calcObj.operation = '';
