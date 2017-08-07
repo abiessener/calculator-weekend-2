@@ -168,19 +168,19 @@ $(document).ready(function () {
     $('#dotButton').on('click', pressDot);
 
     $('#clearButton').on('click', pressClear);
-    $('#divideButton').add('#divideBaseButton').on('click', function () {
+    $('#divideButton').on('click', function () {
         pressOp('/');
         $('#divideBaseButton').css('background-color', 'yellow');
     });
-    $('#multiplyButton').add('#multiplyBaseButton').on('click', function () {
+    $('#multiplyButton').on('click', function () {
         pressOp('*');
         $('#multiplyBaseButton').css('background-color', 'yellow');
     });
-    $('#subtractButton').add('#subtractBaseButton').on('click', function () {
+    $('#subtractButton').on('click', function () {
         pressOp('-');
         $('#subtractBaseButton').css('background-color', 'yellow');
     });
-    $('#addButton').add('#addBaseButton').on('click', function () {
+    $('#addButton').on('click', function () {
         pressOp('+');
         $('#addBaseButton').css('background-color', 'yellow');
     });
@@ -189,6 +189,26 @@ $(document).ready(function () {
     $('#templinButton').on('click', pressTemplin);
     $('#nicButton').on('click', pressNic);
 
+    $('#divideBaseButton').on('click', function () {
+        $('#divideBaseButton').css('background-color', 'yellow');
+        calcObj.operation = '/';
+    });
+
+    $('#multiplyBaseButton').on('click', function () {
+        $('#multiplyBaseButton').css('background-color', 'yellow');
+        calcObj.operation = '*';
+    });
+
+    $('#addBaseButton').on('click', function () {
+        $('#addBaseButton').css('background-color', 'yellow');
+        calcObj.operation = '+';
+    });
+    
+    $('#subtractBaseButton').on('click', function () {
+        $('#subtractBaseButton').css('background-color', 'yellow');
+        calcObj.operation = '-';
+    });
+    
     $('#baseOperate').on('click', pressOperate);
 });
 
