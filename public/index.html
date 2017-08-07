@@ -1,49 +1,57 @@
 <html>
-    <head>
-        <title>Weekend Challenge 2: Calculator</title>
-        <script src="./vendors/jquery-3.2.1.min.js"></script>
-        <script src="client.js"></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div id="headlineDiv">
-            <h1>Weekend Challenge 2: Calculator</h1>
-            <hr>
+
+<head>
+    <title>Weekend Challenge 2: Calculator</title>
+    <script src="./vendors/jquery-3.2.1.min.js"></script>
+    <script src="client.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="headlineDiv">
+        <h1>Weekend Challenge 2: Calculator</h1>
+        <hr>
+    </div>
+    <div id="calcDiv">
+        <div id="resultWindow"></div>
+        <div id="buttonsDiv">
+            <button id="clearButton" class="opsButtons">C</button>
+            <button id="divideButton" class="opsButtons">/</button>
+            <button id="multiplyButton" class="opsButtons">*</button>
+            <button id="subtractButton" class="opsButtons">-</button>
+            <button id="sevenButton" class="numButtons">7</button>
+            <button id="eightButton" class="numButtons">8</button>
+            <button id="nineButton" class="numButtons">9</button>
+            <button id="addButton" class="opsButtons">+</button>
+            <button id="fourButton" class="numButtons">4</button>
+            <button id="fiveButton" class="numButtons">5</button>
+            <button id="sixButton" class="numButtons">6</button>
+            <button id="oneButton" class="numButtons">1</button>
+            <button id="twoButton" class="numButtons">2</button>
+            <button id="threeButton" class="numButtons">3</button>
+            <button id="equalsButton" class="opsButtons">=</button>
+            <button id="templinButton" class="dudeButtons"><img src="data/templinface.jpg" height="38" width="38"></button>
+            <button id="dotButton" class="numButtons">.</button>
+            <button id="zeroButton" class="numButtons">0</button>
+            <button id="nicButton" class="dudeButtons"><img id="nicFace" src="data/nicface.jpg" height="38" width="38"></button>
         </div>
-        <div id="calcDiv">
-            <div id="resultWindow"></div>
-            <div id="buttonsDiv">
-                <button id="clearButton" class="opsButtons">C</button>
-                <button id="divideButton" class="opsButtons">/</button>
-                <button id="multiplyButton" class="opsButtons">*</button>
-                <button id="subtractButton" class="opsButtons">-</button>
-                <button id="sevenButton" class="numButtons">7</button>
-                <button id="eightButton" class="numButtons">8</button>
-                <button id="nineButton" class="numButtons">9</button>
-                <button id="addButton" class="opsButtons">+</button>
-                <button id="fourButton" class="numButtons">4</button>
-                <button id="fiveButton" class="numButtons">5</button>
-                <button id="sixButton" class="numButtons">6</button>
-                <button id="oneButton" class="numButtons">1</button>
-                <button id="twoButton" class="numButtons">2</button>
-                <button id="threeButton" class="numButtons">3</button>
-                <button id="equalsButton" class="opsButtons">=</button>
-                <button id="templinButton" class="dudeButtons"><img src="data/templinface.jpg" height="38" width="38"></button>
-                <button id="dotButton" class="numButtons">.</button>
-                <button id="zeroButton" class="numButtons">0</button>
-                <button id="nicButton" class="dudeButtons"><img id="nicFace" src="data/nicface.jpg" height="38" width="38"></button>
-            </div>
-        </div>
-        <div id="baseDiv" style="display: none">
-            <label for="baseInputOne">Input 1: </label>
-            <input type="text" id="baseInputOne">
-            <label for="baseInputTwo">Input 2: </label>
-            <input type="text" id="baseInputTwo">
-            <label for="baseOutput">Output: </label>
-            <input type="text" id="baseOutput">
-            <hr>
-            <button id="baseOperate">Operate</button>
-            
-        </div>
-    </body>
+    </div>
+    <div id="baseDiv">
+        <label for="baseInputOne">Input 1: </label>
+        <input type="text" id="baseInputOne">
+        <label for="baseInputTwo">Input 2: </label>
+        <input type="text" id="baseInputTwo">
+        <label for="baseOutput">Output: </label>
+        <input type="text" id="baseOutput">
+        <hr>
+        <button id="addBaseButton" class="opsButtons">+</button>
+        <button id="subtractBaseButton" class="opsButtons">-</button>
+        <button id="multiplyBaseButton" class="opsButtons">*</button>
+        <button id="divideBaseButton" class="opsButtons">/</button>
+        <button id="baseOperate">Operate</button>
+
+
+    </div>
+</body>
+
 </html>

@@ -16,6 +16,7 @@ function sendData() {
             console.log('POST successful, response:', response);
         }
     });
+    $('.opsButtons').css('background-color', 'pink');
     getData();
 }
 
@@ -38,6 +39,7 @@ function updateDelay(numbers) {
     updateDisplay('cOmpuTInG...');
     setTimeout(function () {
         updateDisplay(numbers);
+        $('#baseOutput').val(numbers);
     }, 3000);
 }
 
@@ -77,6 +79,7 @@ function pressOp(input) {
     console.log('pressOp', input);
     if (calcObj.operation.length === 0) {
         calcObj.inputOne = currentValue;
+        $('#baseInputOne').val(currentValue);
         calcObj.operation = input;
         currentValue = '';
         updateDisplay('');
@@ -87,6 +90,7 @@ function pressOp(input) {
 function pressEquals() {
     if (calcObj.inputOne.length > 0 && calcObj.inputTwo.length === 0 && calcObj.operation.length === 1) {
         calcObj.inputTwo = currentValue;
+        $('#baseInputTwo').val(currentValue);
     }
     console.log('pressEquals');
     console.log(calcObj);
@@ -113,19 +117,20 @@ function pressNic() {
     growNic(growthFactor);
 }
 
-function growNic(factor){
+function growNic(factor) {
     $('#nicButton').children().height($('#nicButton').children().height() + factor);
     $('#nicButton').children().width($('#nicButton').children().width() + factor);
     timeoutRand = Math.floor(Math.random() * (1 + 3000 - 1000) + 1000);
     growthRand = Math.floor(Math.random() * (1 + 3 - 1) + 1);
-    setTimeout(function() {
+    setTimeout(function () {
         growNic(growthRand);
     }, timeoutRand);
 }
 
-function pressOperate () {
+function pressOperate() {
     calcObj.inputOne = $('#baseInputOne').val();
     calcObj.inputTwo = $('#baseInputTwo').val();
+    sendData();
 }
 
 // our doc ready is really just click handlers
@@ -163,17 +168,21 @@ $(document).ready(function () {
     $('#dotButton').on('click', pressDot);
 
     $('#clearButton').on('click', pressClear);
-    $('#divideButton').on('click', function () {
-        pressOp('/')
+    $('#divideButton').add('#divideBaseButton').on('click', function () {
+        pressOp('/');
+        $('#divideBaseButton').css('background-color', 'yellow');
     });
-    $('#multiplyButton').on('click', function () {
-        pressOp('*')
+    $('#multiplyButton').add('#multiplyBaseButton').on('click', function () {
+        pressOp('*');
+        $('#multiplyBaseButton').css('background-color', 'yellow');
     });
-    $('#subtractButton').on('click', function () {
-        pressOp('-')
+    $('#subtractButton').add('#subtractBaseButton').on('click', function () {
+        pressOp('-');
+        $('#subtractBaseButton').css('background-color', 'yellow');
     });
-    $('#addButton').on('click', function () {
-        pressOp('+')
+    $('#addButton').add('#addBaseButton').on('click', function () {
+        pressOp('+');
+        $('#addBaseButton').css('background-color', 'yellow');
     });
     $('#equalsButton').on('click', pressEquals);
 
